@@ -36,8 +36,8 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------------------------------------
 # COLUMN NAME CONSTANTS - update once real Bloomberg CSV headers are known
 # ---------------------------------------------------------------------------
-DATE_COL_CANDIDATES = ['Date', 'date', 'DATE']
-PRICE_COL_CANDIDATES = ['PX_LAST', 'basis', 'value', 'Value', 'Z5_Basis', 'price']
+DATE_COL_CANDIDATES = ['Date', 'date', 'DATE', 'day']
+PRICE_COL_CANDIDATES = ['PX_LAST', 'basis', 'value', 'Value', 'Z5_Basis', 'price', 'z5_basis']
 
 
 def load_z5_basis(csv_path):
@@ -219,5 +219,5 @@ if __name__ == "__main__":
 
     one_sigma_comparison(winter, result)
 
-    out_name = '/home/claude/z5_model/z5_basis_convexity_chart.png'
+    out_name = 'data/z5_basis_convexity_chart.png'
     make_chart(winter, result, recent_era_start, out_name, placeholder=not USE_REAL_DATA)
